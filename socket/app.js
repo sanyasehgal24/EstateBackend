@@ -2,13 +2,13 @@ import { Server } from "socket.io";
 
 const io = new Server({
   cors: {
-    origin: process.env.CLIENT_URL,
+    origin: "http://localhost:5173",
   },
 });
-//cors : { origin: process.env.CLIENT_URL, credentials: true }};
+
 
 let onlineUser = [];
-const port = process.env.PORT || 4000;
+
 const addUser = (userId, socketId) => {
   const userExits = onlineUser.find((user) => user.userId === userId);
   if (!userExits) {
@@ -40,4 +40,4 @@ io.on("connection", (socket) => {
   });
 });
 
-io.listen(port);
+io.listen("4000");
