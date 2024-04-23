@@ -7,7 +7,7 @@ import {
   savePost,
   profilePosts,
   getNotificationNumber
-} from "../../server/controllers/user.controller.js";
+} from "../controllers/usercontroller.js";
 import {verifyToken} from "../middleware/verifyToken.js";
 
 const router = express.Router();
