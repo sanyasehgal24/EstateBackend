@@ -10,7 +10,7 @@ import messageRoute from "./routes/message.route.js";
 const port = process.env.PORT || 8800;
 const app = express();
 app.use(cors({
-  origin: "https://662cc5e51f56e9a15ce3c85b--incomparable-squirrel-2ecc96.netlify.app",
+  origin: "https://662ccb977232b2b6680931bf--incomparable-squirrel-2ecc96.netlify.app/",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
