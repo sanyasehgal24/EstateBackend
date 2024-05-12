@@ -42,7 +42,7 @@ export const getPost = async (req, res) => {
       },
     });
 
-    const token = req.cookies?.token;
+    const token = req.headers.authorization;
 
     if (token) {
       jwt.verify(token, process.env.JWT_SECRET_KEY, async (err, payload) => {
@@ -89,8 +89,10 @@ export const addPost = async (req, res) => {
 };
 
 export const updatePost = async (req, res) => {
+  console.log(req.body, "hey");
   try {
     res.status(200).json();
+
   } catch (err) {
     console.log(err);
     res.status(500).json({ message: "Failed to update posts" });

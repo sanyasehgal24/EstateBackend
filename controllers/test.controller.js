@@ -6,7 +6,7 @@ export const shouldBeLoggedIn = async (req, res) => {
 };
 
 export const shouldBeAdmin = async (req, res) => {
-  const token = req.cookies.token;
+  const token = req.headers.authorization;
 
   if (!token) return res.status(401).json({ message: "Not Authenticated!" });
 
